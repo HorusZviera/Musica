@@ -34,9 +34,11 @@ if process_data == '1':
     if not os.path.exists(data_dir):
         os.makedirs(data_dir)
         filename = os.path.join(data_dir, 'speech_commands_v0.02.tar.gz')
+        print("Descargando Carpeta con datos de prueba...")
         urllib.request.urlretrieve(url, filename)
         
         # Descomprimir el archivo
+        print("Descomprimiendo carpeta...")
         with tarfile.open(filename, 'r:gz') as tar:
             tar.extractall(path=data_dir)
         
